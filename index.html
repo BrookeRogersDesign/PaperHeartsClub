@@ -19,9 +19,7 @@
 <meta name="twitter:title" content="Paper Hearts Club">
 <meta name="twitter:description" content="Snail mail, reimagined. Monthly letters and paper goods, sent with love.">
 <meta name="twitter:image" content="https://brookerogersdesign.github.io/PaperHeartsClub/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/ljp7fbz.css">
 <style>
   :root{
     --cream:#FBF6E4;
@@ -33,7 +31,7 @@
   body{
     background:var(--cream);
     color:var(--brown);
-    font-family:'Archivo',sans-serif;
+    font-family:"proxima-nova",sans-serif;
     -webkit-font-smoothing:antialiased;
   }
 
@@ -110,6 +108,111 @@
     .icons{flex-wrap:wrap;justify-content:center;gap:6vw 8vw;padding-top:2vh;}
     .icons svg{width:34px;}
   }
+
+  /* ===== COMING SOON SECTIONS ===== */
+  .script{ font-family:"pd-americano", cursive; color:var(--red); font-weight:400; }
+
+  .feature{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6vw;
+    align-items:center;
+    max-width:1300px;
+    margin:0 auto;
+    padding:5vw 6vw;
+  }
+  .feature-img{
+    aspect-ratio:1/1;
+    width:100%;
+    background:var(--red);
+    border-radius:3px;
+    background-size:cover;
+    background-position:center;
+  }
+  .feature-script{
+    font-size:clamp(2rem,4.6vw,4.2rem);
+    line-height:1.02;
+  }
+
+  .signup{
+    text-align:center;
+    max-width:600px;
+    margin:0 auto;
+    padding:3vw 6vw 6vw;
+  }
+  .eyebrow{
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.82rem;
+    color:var(--brown);
+  }
+  .signup-title{
+    font-size:clamp(2.8rem,6.2vw,5.2rem);
+    line-height:1;
+    margin:.5rem 0 1.6rem;
+  }
+  .signup-copy{
+    font-size:.95rem;
+    line-height:1.65;
+    color:var(--brown);
+    max-width:440px;
+    margin:0 auto 2.2rem;
+  }
+  .subscribe{
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+    border:1.5px solid var(--red);
+    border-radius:999px;
+    padding:.3rem .3rem .3rem 1.5rem;
+    max-width:430px;
+    margin:0 auto;
+  }
+  .subscribe input{
+    flex:1;
+    min-width:0;
+    border:none;
+    background:transparent;
+    color:var(--red);
+    font-family:inherit;
+    font-size:.9rem;
+    outline:none;
+  }
+  .subscribe input::placeholder{ color:var(--red); opacity:.5; }
+  .subscribe button{
+    flex:none;
+    border:none;
+    background:var(--red);
+    color:var(--cream);
+    font-family:inherit;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    padding:.8rem 1.6rem;
+    border-radius:999px;
+    cursor:pointer;
+    transition:opacity .2s ease;
+  }
+  .subscribe button:hover{ opacity:.85; }
+
+  .site-footer{
+    text-align:center;
+    padding:5vw 6vw;
+  }
+  .site-footer img{
+    width:min(230px,42%);
+    height:auto;
+    display:inline-block;
+  }
+
+  @media (max-width:720px){
+    .feature{ grid-template-columns:1fr; gap:2.4rem; padding:12vw 8vw 8vw; }
+    .feature-script{ text-align:center; }
+    .signup{ padding:6vw 8vw 12vw; }
+    .subscribe button{ padding:.75rem 1.1rem; }
+  }
 </style>
 </head>
 <body>
@@ -147,5 +250,24 @@
       <img src="PaperHeartsClub-Icons-18-red.png" alt="">
     </div>
   </main>
+
+  <section class="feature">
+    <div class="feature-img" role="img" aria-label="Paper Hearts Club"></div>
+    <p class="script feature-script">The Art of<br>Staying in Touch</p>
+  </section>
+
+  <section class="signup">
+    <p class="eyebrow">Coming Soon</p>
+    <h2 class="script signup-title">Letters Worth Waiting For</h2>
+    <p class="signup-copy">A modern mail club built around thoughtful correspondence, meaningful keepsakes, and friendships that deserve more than a text message. Join our mailing list to be the first to hear when memberships become available.</p>
+    <form class="subscribe" action="https://formspree.io/f/xpqvwjwp" method="POST">
+      <input type="email" name="email" placeholder="youremail123@gmail.com" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <img src="Footer-Logo.png" alt="Paper Hearts Club">
+  </footer>
 </body>
 </html>
