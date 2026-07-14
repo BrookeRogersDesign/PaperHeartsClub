@@ -135,8 +135,9 @@
   }
   .feature-script{
     grid-area:heading;
-    font-size:clamp(1.8rem,5.1vw,4.9rem); /* 55pt @ ~1440 frame */
-    line-height:1.12;
+    font-family:"pd-americano-short","pd-americano",cursive;
+    font-size:clamp(1.5rem,3.8vw,4.56rem); /* 55pt(73px) @1920; scales down, capped above */
+    line-height:1.15;
     margin:0 0 1.7rem;
   }
   .feature-body{ grid-area:body; }
@@ -149,9 +150,24 @@
   .feature-body p:last-child{ margin-bottom:0; }
 
   .signup{
+    position:relative;
     text-align:center;
     padding:3vw 3vw 6vw;
   }
+  .signup .eyebrow,
+  .signup .signup-title,
+  .signup .signup-copy,
+  .signup .subscribe{ position:relative; z-index:1; }
+  .star{
+    position:absolute;
+    z-index:0;
+    width:clamp(46px,5vw,92px);
+    height:auto;
+    pointer-events:none;
+    user-select:none;
+  }
+  .star-tr{ top:.5rem; right:16%; transform:rotate(8deg); }
+  .star-bl{ top:8.5rem; left:13%; transform:rotate(-7deg); }
   .eyebrow{
     font-weight:700;
     letter-spacing:.22em;
@@ -231,6 +247,9 @@
     .feature-img{ align-self:auto; aspect-ratio:1/1; min-height:0; }
     .feature-script{ text-align:center; margin-bottom:0; }
     .signup{ padding:6vw 6vw 12vw; }
+    .star{ width:44px; }
+    .star-tr{ top:0; right:5%; }
+    .star-bl{ top:auto; bottom:1.5rem; left:4%; }
     .subscribe button{ padding:.75rem 1.1rem; }
   }
 </style>
@@ -284,6 +303,8 @@
   </section>
 
   <section class="signup">
+    <img class="star star-tr" src="star.png" alt="" aria-hidden="true">
+    <img class="star star-bl" src="star.png" alt="" aria-hidden="true">
     <p class="eyebrow">Coming Soon</p>
     <h2 class="script signup-title">Letters Worth Waiting For</h2>
     <p class="signup-copy">A modern mail club built around thoughtful correspondence, meaningful keepsakes, and friendships that deserve more than a text message. Join our mailing list to be the first to hear when memberships become available.</p>
