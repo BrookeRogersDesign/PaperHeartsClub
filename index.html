@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Hearts Club</title>
+<link rel="icon" type="image/png" href="assets/PaperHeartsClub-Icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6E4;
+    --brown:#381412;
+    --red:#D44942;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    background:var(--cream);
+    color:var(--brown);
+    font-family:'Archivo',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .hero{
+    min-height:100vh;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    padding:2.4vw 3vw 2.6vw;
+  }
+
+  /* ---- NAV ---- */
+  .nav{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:start;
+    gap:1rem;
+  }
+  .nav-left{display:flex;gap:2.6vw;}
+  .nav-right{justify-self:end;display:flex;}
+  .nav a{
+    color:var(--red);
+    text-decoration:none;
+    font-weight:700;
+    font-size:clamp(.72rem,1.05vw,1.05rem);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    transition:opacity .2s ease;
+  }
+  .nav a:hover{opacity:.6;}
+  .brand-mark{justify-self:center;}
+  .brand-mark img{
+    height:clamp(58px,7vw,104px);
+    width:auto;
+    display:block;
+  }
+
+  /* ---- WORDMARK ---- */
+  .wordmark{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2vh 0;
+  }
+  .wordmark img{
+    width:min(86%,1400px);
+    height:auto;
+    display:block;
+  }
+
+  /* ---- ICON ROW ---- */
+  .icons{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:1rem;
+    padding:0 2vw .5vh;
+  }
+  .icons img{
+    height:clamp(34px,4vw,58px);
+    width:auto;
+    display:block;
+  }
+
+  @media (max-width:720px){
+    .hero{padding:5vw 5vw 6vw;}
+    .nav{grid-template-columns:1fr auto 1fr;}
+    .nav-left{gap:5vw;}
+    .icons{flex-wrap:wrap;justify-content:center;gap:6vw 8vw;padding-top:2vh;}
+    .icons svg{width:34px;}
+  }
+</style>
+</head>
+<body>
+  <main class="hero">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="snail-mail.html">Snail Mail</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <a class="brand-mark" href="index.html" aria-label="Paper Hearts Club home">
+        <img src="assets/PaperHeartsClub-Icon.png" alt="Paper Hearts Club">
+      </a>
+      <div class="nav-right">
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <div class="wordmark">
+      <img src="assets/PaperHeartsClub-Branding-Name.gif" alt="Paper Hearts">
+    </div>
+
+    <div class="icons">
+      <img src="assets/Icons/PaperHeartsClub-Icons-09-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-10-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-11-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-12-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-13-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-14-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-15-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-16-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-17-red.png" alt="">
+      <img src="assets/Icons/PaperHeartsClub-Icons-18-red.png" alt="">
+    </div>
+  </main>
+</body>
+</html>
