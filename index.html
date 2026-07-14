@@ -115,30 +115,42 @@
   .feature{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:6vw;
-    align-items:center;
+    grid-template-areas:"img heading" "img body";
+    column-gap:5vw;
+    row-gap:0;
+    align-items:start;
     max-width:1300px;
     margin:0 auto;
-    padding:5vw 6vw;
+    padding:6vw 6vw 4vw;
   }
   .feature-img{
-    aspect-ratio:1/1;
+    grid-area:img;
+    align-self:stretch;
     width:100%;
+    min-height:min(80vw,560px);
     background:var(--red);
     border-radius:3px;
     background-size:cover;
     background-position:center;
   }
   .feature-script{
-    font-size:clamp(2rem,4.6vw,4.2rem);
-    line-height:1.02;
+    grid-area:heading;
+    font-size:clamp(1.8rem,5.1vw,4.9rem); /* 55pt @ ~1440 frame */
+    line-height:1.12;
+    margin:0 0 1.7rem;
   }
+  .feature-body{ grid-area:body; }
+  .feature-body p{
+    font-size:1rem;
+    line-height:1.65;
+    color:var(--brown);
+    margin-bottom:1.05rem;
+  }
+  .feature-body p:last-child{ margin-bottom:0; }
 
   .signup{
     text-align:center;
-    max-width:600px;
-    margin:0 auto;
-    padding:3vw 6vw 6vw;
+    padding:3vw 3vw 6vw;
   }
   .eyebrow{
     font-weight:700;
@@ -148,9 +160,11 @@
     color:var(--brown);
   }
   .signup-title{
-    font-size:clamp(2.8rem,6.2vw,5.2rem);
-    line-height:1;
-    margin:.5rem 0 1.6rem;
+    font-family:"pd-americano-short","pd-americano",cursive;
+    font-size:clamp(1.5rem,6.9vw,7.5rem); /* 75pt @ ~1440 frame; one line, scales with width */
+    line-height:1.1;
+    white-space:nowrap;
+    margin:.2rem auto 1.8rem;
   }
   .signup-copy{
     font-size:.95rem;
@@ -208,9 +222,15 @@
   }
 
   @media (max-width:720px){
-    .feature{ grid-template-columns:1fr; gap:2.4rem; padding:12vw 8vw 8vw; }
-    .feature-script{ text-align:center; }
-    .signup{ padding:6vw 8vw 12vw; }
+    .feature{
+      grid-template-columns:1fr;
+      grid-template-areas:"heading" "img" "body";
+      row-gap:1.8rem;
+      padding:12vw 8vw 8vw;
+    }
+    .feature-img{ align-self:auto; aspect-ratio:1/1; min-height:0; }
+    .feature-script{ text-align:center; margin-bottom:0; }
+    .signup{ padding:6vw 6vw 12vw; }
     .subscribe button{ padding:.75rem 1.1rem; }
   }
 </style>
@@ -254,6 +274,13 @@
   <section class="feature">
     <div class="feature-img" role="img" aria-label="Paper Hearts Club"></div>
     <p class="script feature-script">The Art of<br>Staying in Touch</p>
+    <div class="feature-body">
+      <p>I believe some things are still worth writing by hand.</p>
+      <p>In a world of instant messages and disappearing conversations, a handwritten letter asks us to slow down. To choose our words with care. To send a piece of ourselves that can't be copied or forwarded.</p>
+      <p>The Pegasus is a symbol of imagination, creativity, and connection. It reminds us that friendship isn't measured in miles, but in the moments we choose to share.</p>
+      <p>Some friends live just around the corner, while others are hundreds of miles away. The wings are for all of them.</p>
+      <p>Every letter carries more than paper. It carries the time someone set aside to think of another person, to share a story, offer encouragement, celebrate a milestone, or simply say, &ldquo;I was thinking about you.&rdquo; Those small gestures often become the ones we remember the longest.</p>
+    </div>
   </section>
 
   <section class="signup">
