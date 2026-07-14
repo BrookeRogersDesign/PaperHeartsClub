@@ -125,13 +125,12 @@
   }
   .feature-img{
     grid-area:img;
-    align-self:stretch;
+    align-self:center;
+    justify-self:center;
     width:100%;
-    min-height:min(80vw,560px);
-    background:var(--red);
-    border-radius:3px;
-    background-size:cover;
-    background-position:center;
+    max-width:600px;
+    height:auto;
+    display:block;
   }
   .feature-script{
     grid-area:heading;
@@ -245,7 +244,7 @@
       row-gap:1.8rem;
       padding:12vw 8vw 8vw;
     }
-    .feature-img{ align-self:auto; aspect-ratio:1/1; min-height:0; }
+    .feature-img{ align-self:auto; max-width:440px; margin:0 auto; }
     .feature-script{ text-align:center; margin-bottom:0; }
     .signup{ padding:6vw 6vw 12vw; }
     .star{ width:44px; }
@@ -292,7 +291,8 @@
   </main>
 
   <section class="feature">
-    <div class="feature-img" role="img" aria-label="Paper Hearts Club"></div>
+    <img class="feature-img" src="Collage.png" alt="A collage of Paper Hearts Club letters, envelopes, and keepsakes">
+
     <p class="script feature-script">The Art of<br>Staying in Touch</p>
     <div class="feature-body">
       <p>I believe some things are still worth writing by hand.</p>
