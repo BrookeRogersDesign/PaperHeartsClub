@@ -112,32 +112,39 @@
   /* ===== COMING SOON SECTIONS ===== */
   .script{ font-family:"pd-americano", cursive; color:var(--red); font-weight:400; }
 
+  .feature-heading{
+    max-width:1560px;
+    margin:0 auto;
+    padding:5vw 5vw 0;
+    text-align:center;
+  }
   .feature{
     display:grid;
     grid-template-columns:1fr 1fr;
-    grid-template-areas:"img heading" "img body";
+    grid-template-areas:"img body";
     column-gap:5vw;
-    row-gap:0;
-    align-items:start;
-    max-width:1300px;
+    align-items:center;
+    max-width:1560px;
     margin:0 auto;
-    padding:6vw 6vw 4vw;
+    padding:5.5vw 5vw 4vw;
   }
   .feature-img{
     grid-area:img;
     align-self:center;
     justify-self:center;
     width:100%;
-    max-width:600px;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
     height:auto;
     display:block;
   }
   .feature-script{
-    grid-area:heading;
     font-family:"pd-americano-short","pd-americano",cursive;
-    font-size:clamp(1.5rem,3.8vw,4.56rem); /* 55pt(73px) @1920; scales down, capped above */
-    line-height:1.15;
-    margin:0 0 1.7rem;
+    font-size:clamp(1.3rem,4.8vw,5.5rem); /* one line across; scales, capped */
+    line-height:1.1;
+    white-space:nowrap;
+    margin:0;
   }
   .feature-body{ grid-area:body; }
   .feature-letter-title{
@@ -244,14 +251,15 @@
   }
 
   @media (max-width:720px){
+    .feature-heading{ padding:12vw 8vw 0; }
     .feature{
       grid-template-columns:1fr;
-      grid-template-areas:"heading" "img" "body";
+      grid-template-areas:"img" "body";
       row-gap:1.8rem;
-      padding:12vw 8vw 8vw;
+      padding:6vw 8vw 8vw;
     }
     .feature-img{ align-self:auto; max-width:440px; margin:0 auto; }
-    .feature-script{ text-align:center; margin-bottom:0; }
+    .feature-script{ white-space:normal; font-size:clamp(2rem,9vw,3.2rem); }
     .signup{ padding:6vw 6vw 12vw; }
     .star{ width:44px; }
     .star-tr{ top:0; right:5%; }
@@ -296,10 +304,11 @@
     </div>
   </main>
 
+  <div class="feature-heading">
+    <p class="script feature-script">The Art of Staying in Touch</p>
+  </div>
   <section class="feature">
     <img class="feature-img" src="Collage.png" alt="A collage of Paper Hearts Club letters, envelopes, and keepsakes">
-
-    <p class="script feature-script">The Art of<br>Staying in Touch</p>
     <div class="feature-body">
       <h3 class="feature-letter-title">A Letter from Paper Hearts Club</h3>
       <p>I've always believed there is something special about creating things you can actually hold. In a world where so much of our lives exist on screens and disappear as quickly as we scroll past them, there is something grounding about paper. A handwritten note, a postcard tucked inside a book, a sheet of stationery you've been saving for the right moment, or a letter that lives in a drawer for years before you stumble across it again. These are the kinds of things that become part of our lives instead of simply passing through them.</p>
