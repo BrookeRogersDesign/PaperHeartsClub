@@ -70,12 +70,30 @@
   }
 
   /* ---- WORDMARK ---- */
-  .wordmark{
+  .hero-center{
     flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:clamp(2.4rem,5.5vh,4.5rem);
+    padding:2vh 0;
+  }
+  .cta{
+    color:var(--red);
+    text-decoration:none;
+    font-weight:700;
+    font-size:clamp(.72rem,1.05vw,1.05rem);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    transition:opacity .2s ease;
+  }
+  .cta:hover{ opacity:.6; }
+  .wordmark{
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:2vh 0;
+    width:100%;
   }
   .wordmark picture{
     width:min(86%,1400px);
@@ -193,7 +211,7 @@
     font-size:clamp(1.1rem,5.21vw,6.25rem); /* 75pt(100px) at 1920; scales down below, capped above */
     line-height:1.1;
     white-space:nowrap;
-    margin:.2rem auto .7rem;
+    margin:.2rem auto 1.6rem;
   }
   .signup-copy{
     font-size:.95rem;
@@ -272,7 +290,7 @@
   <main class="hero">
     <nav class="nav">
       <div class="nav-left">
-        <a href="#">Snail Mail</a>
+        <a href="https://buy.stripe.com/28EeVdaS2foxdY8480ejK01" target="_blank" rel="noopener">Snail Mail</a>
         <a href="#">About Us</a>
       </div>
       <a class="brand-mark" href="index.html" aria-label="Paper Hearts Club home">
@@ -283,11 +301,14 @@
       </div>
     </nav>
 
-    <div class="wordmark">
-      <picture>
-        <source media="(max-width:720px)" srcset="PaperHeartsClub-Branding-Name-Mobile.gif">
-        <img src="PaperHeartsClub-Branding-Name.gif" alt="Paper Hearts">
-      </picture>
+    <div class="hero-center">
+      <div class="wordmark">
+        <picture>
+          <source media="(max-width:720px)" srcset="PaperHeartsClub-Branding-Name-Mobile.gif">
+          <img src="PaperHeartsClub-Branding-Name.gif" alt="Paper Hearts">
+        </picture>
+      </div>
+      <a class="cta" href="https://buy.stripe.com/28EeVdaS2foxdY8480ejK01" target="_blank" rel="noopener">Get the Next Letter</a>
     </div>
 
     <div class="icons">
@@ -323,7 +344,6 @@
     <img class="star star-tr" src="star.png" alt="" aria-hidden="true">
     <img class="star star-bl" src="star.png" alt="" aria-hidden="true">
     <h2 class="script signup-title">Letters Worth Waiting For</h2>
-    <p class="eyebrow">Coming Soon</p>
     <p class="signup-copy">A modern mail club built around thoughtful correspondence, meaningful keepsakes, and friendships that deserve more than a text message. Join our mailing list to be the first to hear when memberships become available.</p>
     <form class="subscribe" action="https://formspree.io/f/xpqvwjwp" method="POST">
       <input type="email" name="email" placeholder="youremail123@gmail.com" aria-label="Email address" required>
