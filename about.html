@@ -52,6 +52,7 @@
     font-size:clamp(.72rem,1.05vw,1.05rem);
     letter-spacing:.12em;
     text-transform:uppercase;
+    white-space:nowrap;
     transition:opacity .2s ease;
   }
   .nav a:hover{opacity:.6;}
@@ -114,8 +115,9 @@
 
   @media (max-width:720px){
     .hero{padding:5vw 5vw 6vw;}
-    .nav{grid-template-columns:1fr auto 1fr;}
-    .nav-left{gap:5vw;}
+    .nav{grid-template-columns:1fr auto 1fr;column-gap:.5rem;}
+    .nav a{font-size:.6rem;letter-spacing:.05em;}
+    .nav-left{gap:4vw;}
     .icons{flex-wrap:wrap;justify-content:center;gap:6vw 8vw;padding-top:2vh;}
     .icons svg{width:34px;}
   }
