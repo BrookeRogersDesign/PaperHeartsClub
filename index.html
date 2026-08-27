@@ -190,7 +190,9 @@
   .signup .eyebrow,
   .signup .signup-title,
   .signup .signup-copy,
+  .signup .signup-note,
   .signup .subscribe{ position:relative; z-index:1; }
+  .signup .eyebrow{ line-height:1.9; }
   .star{
     position:absolute;
     z-index:0;
@@ -221,7 +223,14 @@
     line-height:1.65;
     color:var(--brown);
     max-width:440px;
-    margin:0 auto 2.2rem;
+    margin:0 auto 1.1rem;
+  }
+  .signup-note{
+    font-size:.78rem;
+    letter-spacing:.08em;
+    color:var(--brown);
+    opacity:.55;
+    margin:1.15rem auto 0;
   }
   .subscribe{
     display:flex;
@@ -231,7 +240,7 @@
     border-radius:999px;
     padding:.3rem .3rem .3rem 1.5rem;
     max-width:430px;
-    margin:0 auto;
+    margin:2.2rem auto 0;
   }
   .subscribe input{
     flex:1;
@@ -480,12 +489,15 @@
   <section class="signup">
     <img class="star star-tr" src="star.png" alt="" aria-hidden="true">
     <img class="star star-bl" src="star.png" alt="" aria-hidden="true">
+    <p class="eyebrow">Not Ready to Join?<br>Start With Something Free.</p>
     <h2 class="script signup-title">Letters Worth Waiting For</h2>
-    <p class="signup-copy">A modern mail club for people who still believe in handwritten letters, thoughtful paper goods, and creativity you can hold in your hands. Become a member today and receive a thoughtfully curated piece of snail mail delivered to your mailbox each month.</p>
+    <p class="signup-copy">Paper Hearts is a monthly excuse to step away from the screen and find something fun in your mailbox again &mdash; handwritten thoughts, paper goods, little surprises, and whatever else I&rsquo;m dreaming up that month.</p>
+    <p class="signup-copy">Not ready to subscribe? Drop your email below. I&rsquo;ll keep you in the loop with what&rsquo;s happening inside Paper Hearts, little peeks at upcoming themes, and first dibs on the next mailer. &#128140;</p>
     <form class="subscribe" action="https://formspree.io/f/xpqvwjwp" method="POST">
       <input type="email" name="email" placeholder="youremail123@gmail.com" aria-label="Email address" required>
       <button type="submit">Subscribe</button>
     </form>
+    <p class="signup-note">free &middot; no spam &middot; unsubscribe anytime</p>
   </section>
 
   <footer class="site-footer">
