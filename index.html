@@ -9,16 +9,16 @@
 
 <!-- Open Graph / social share -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://brookerogersdesign.github.io/PaperHeartsClub/">
+<meta property="og:url" content="https://paperhearts.club/">
 <meta property="og:title" content="Paper Hearts Club">
 <meta property="og:description" content="Snail mail, reimagined. Monthly letters and paper goods, sent with love.">
-<meta property="og:image" content="https://brookerogersdesign.github.io/PaperHeartsClub/og-image.png">
+<meta property="og:image" content="https://paperhearts.club/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Paper Hearts Club">
 <meta name="twitter:description" content="Snail mail, reimagined. Monthly letters and paper goods, sent with love.">
-<meta name="twitter:image" content="https://brookerogersdesign.github.io/PaperHeartsClub/og-image.png">
+<meta name="twitter:image" content="https://paperhearts.club/og-image.png">
 <link rel="stylesheet" href="https://use.typekit.net/ljp7fbz.css">
 <style>
   :root{
@@ -287,6 +287,70 @@
     .star-bl{ top:auto; bottom:1.5rem; left:4%; }
     .subscribe button{ padding:.75rem 1.1rem; }
   }
+
+  /* ===== FAQ ===== */
+  .faq{
+    max-width:1560px;
+    margin:0 auto;
+    padding:5.5vw 5vw 1vw;
+    text-align:center;
+  }
+  .faq-title{
+    font-family:"pd-americano-short","pd-americano",cursive;
+    font-size:clamp(1.1rem,5.21vw,6.25rem);
+    line-height:1.1;
+    white-space:nowrap;
+    margin:.2rem auto 2.8rem;
+  }
+  .faq-list{
+    max-width:760px;
+    margin:0 auto;
+    text-align:left;
+    border-top:1px solid rgba(212,73,66,.3);
+  }
+  .faq-item{ border-bottom:1px solid rgba(212,73,66,.3); }
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1.4rem;
+    padding:1.15rem 0;
+    font-size:1.05rem;
+    font-weight:700;
+    line-height:1.4;
+    color:var(--brown);
+    transition:color .2s ease;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::marker{ content:""; }
+  .faq-item summary:hover{ color:var(--red); }
+  .faq-item summary::after{
+    content:"+";
+    flex:none;
+    color:var(--red);
+    font-weight:700;
+    font-size:1.3rem;
+    line-height:1;
+  }
+  .faq-item[open] summary{ color:var(--red); }
+  .faq-item[open] summary::after{ content:"\2013"; }
+  .faq-answer{ padding:0 2.6rem 1.6rem 0; }
+  .faq-answer p{
+    font-size:1rem;
+    line-height:1.65;
+    color:var(--brown);
+    margin-bottom:1.05rem;
+  }
+  .faq-answer p:last-child{ margin-bottom:0; }
+
+  @media (max-width:720px){
+    .faq{ padding:12vw 8vw 2vw; }
+    .faq-title{ white-space:normal; font-size:clamp(1.5rem,7.2vw,3.2rem); margin-bottom:2rem; }
+    .faq-item summary{ font-size:1rem; gap:1rem; }
+    .faq-answer{ padding-right:0; }
+  }
 </style>
 </head>
 <body>
@@ -341,6 +405,75 @@
       <p>Our Pegasus is a reminder that imagination and connection have always traveled farther than distance. Some of the people we love live around the corner, while others are hundreds of miles away, but a letter has a way of making that distance feel smaller.</p>
       <p>Every envelope carries more than paper. It carries the time someone set aside to think of another person, to share a story, celebrate a milestone, offer encouragement, or simply say, &ldquo;I was thinking about you.&rdquo; Those are the things that stay with us long after the envelope has been opened.</p>
       <p>I hope these letters encourage you to create more, write more, save more, and surround yourself with tangible reminders of the people and moments that matter most.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <p class="eyebrow">Good Questions</p>
+    <h2 class="script faq-title">Before You Ask.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>When will my first Paper Hearts envelope arrive?</summary>
+        <div class="faq-answer">
+          <p>Paper Hearts is mailed once a month. Orders placed by the 15th will receive that month’s envelope. If you join after the 15th, you’ll be added to the following month’s mailing.</p>
+          <p>Every envelope is packed, stamped, and sent the old-fashioned way — so give your happy mail a little time to find you.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Is there tracking?</summary>
+        <div class="faq-answer">
+          <p>Nope! Paper Hearts travels by good old-fashioned snail mail, which means there’s no tracking number to obsessively refresh. Consider the mystery part of the fun. Keep an eye on your mailbox — something good is coming.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>What if my envelope doesn’t arrive?</summary>
+        <div class="faq-answer">
+          <p>Snail mail occasionally takes the scenic route. If it’s been a few weeks and your Paper Hearts envelope still hasn’t found its way to you, reach out and we’ll figure it out together.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I cancel my subscription?</summary>
+        <div class="faq-answer">
+          <p>Of course. Paper Hearts is meant to be something you look forward to, never something you feel stuck with. You can cancel anytime before your next billing date to avoid being charged for the following month.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I send Paper Hearts as a gift?</summary>
+        <div class="faq-answer">
+          <p>Please do! Paper Hearts makes a very cute little surprise for a friend, sister, mom, long-distance bestie, or anyone whose mailbox could use a little more love. Just use their mailing address when ordering.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>What comes inside each envelope?</summary>
+        <div class="faq-answer">
+          <p>That’s part of the surprise. ♡ Every month is built around a new theme and filled with a thoughtful mix of paper goods, little keepsakes, things to read, things to do, and things you might want to pin to your fridge forever.</p>
+          <p>No two months are exactly alike — and we like it that way.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I know the theme before it arrives?</summary>
+        <div class="faq-answer">
+          <p>You might get a few hints, but we try not to give everything away. Half the magic of Paper Hearts is opening your mailbox without knowing exactly what’s waiting inside.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>How much is Paper Hearts?</summary>
+        <div class="faq-answer">
+          <p>Paper Hearts is $9/month, including a brand-new envelope of happy mail each month. No long-term commitment. Cancel whenever you need to.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Where does Paper Hearts ship?</summary>
+        <div class="faq-answer">
+          <p>For now, Paper Hearts is making its way through mailboxes across the United States. We hope to send our little envelopes farther someday.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Is everything really made by you?</summary>
+        <div class="faq-answer">
+          <p>Yes! Paper Hearts is dreamed up, designed, written, assembled, and packed with lots of love each month. It’s intentionally small-batch, a little imperfect, and very human... Exactly how snail mail should be.</p>
+        </div>
+      </details>
     </div>
   </section>
 
