@@ -28,11 +28,14 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{height:100%;}
+  html{ background:var(--cream); }
   body{
     background:var(--cream);
     color:var(--brown);
     font-family:"proxima-nova",sans-serif;
     -webkit-font-smoothing:antialiased;
+    max-width:1920px;   /* design is drawn at 1920 — stop scaling past it */
+    margin:0 auto;
   }
 
   .hero{
@@ -297,68 +300,86 @@
     .subscribe button{ padding:.75rem 1.1rem; }
   }
 
-  /* ===== FAQ ===== */
-  .faq{
-    max-width:1560px;
+
+  /* ===== PURCHASE OPTIONS ===== */
+  .options{
+    max-width:1180px;
     margin:0 auto;
-    padding:5.5vw 5vw 1vw;
+    padding:clamp(2.5rem,5.5vw,5.5rem) clamp(1.25rem,5vw,3.5rem) 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.7rem;
+  }
+  .option{
+    display:flex;
+    flex-direction:column;
+    border:1.5px solid var(--red);
+    border-radius:22px;
+    padding:2.2rem 1.7rem 2rem;
     text-align:center;
   }
-  .faq-title{
+  .option-star{
+    width:clamp(36px,2.4vw,46px);
+    height:auto;
+    display:block;
+    margin:0 auto 1.05rem;
+    pointer-events:none;
+    user-select:none;
+  }
+  .option:nth-child(2) .option-star{ transform:rotate(8deg); }
+  .option:nth-child(3) .option-star{ transform:rotate(-9deg); }
+  .option-title{
     font-family:"pd-americano-short","pd-americano",cursive;
-    font-size:clamp(1.1rem,5.21vw,6.25rem);
-    line-height:1.1;
-    white-space:nowrap;
-    margin:.2rem auto 2.8rem;
-  }
-  .faq-list{
-    max-width:760px;
-    margin:0 auto;
-    text-align:left;
-    border-top:1px solid rgba(212,73,66,.3);
-  }
-  .faq-item{ border-bottom:1px solid rgba(212,73,66,.3); }
-  .faq-item summary{
-    list-style:none;
-    cursor:pointer;
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:1.4rem;
-    padding:1.15rem 0;
-    font-size:1.05rem;
-    font-weight:700;
-    line-height:1.4;
-    color:var(--brown);
-    transition:color .2s ease;
-  }
-  .faq-item summary::-webkit-details-marker{ display:none; }
-  .faq-item summary::marker{ content:""; }
-  .faq-item summary:hover{ color:var(--red); }
-  .faq-item summary::after{
-    content:"+";
-    flex:none;
     color:var(--red);
+    font-weight:400;
+    font-size:clamp(1.4rem,1.95vw,2.1rem);
+    line-height:1.12;
+    margin-bottom:.5rem;
+  }
+  .option-type{
+    font-size:.67rem;
     font-weight:700;
-    font-size:1.3rem;
-    line-height:1;
-  }
-  .faq-item[open] summary{ color:var(--red); }
-  .faq-item[open] summary::after{ content:"\2013"; }
-  .faq-answer{ padding:0 2.6rem 1.6rem 0; }
-  .faq-answer p{
-    font-size:1rem;
-    line-height:1.65;
+    letter-spacing:.18em;
+    text-transform:uppercase;
     color:var(--brown);
-    margin-bottom:1.05rem;
+    opacity:.55;
+    margin-bottom:.95rem;
   }
-  .faq-answer p:last-child{ margin-bottom:0; }
+  .option-copy{
+    font-size:.9rem;
+    line-height:1.62;
+    color:var(--brown);
+    margin-bottom:1.6rem;
+  }
+  .option-cta{
+    margin-top:auto;
+    align-self:center;
+    display:inline-block;
+    border:1.5px solid var(--red);
+    border-radius:999px;
+    background:transparent;
+    color:var(--red);
+    font-family:inherit;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:.7rem;
+    padding:.8rem 1.7rem;
+    text-decoration:none;
+    transition:background .2s ease,color .2s ease;
+  }
+  .option-cta:hover{ background:var(--red); color:var(--cream); }
+  .option-cta--soon{
+    border-color:rgba(212,73,66,.4);
+    color:var(--red);
+    opacity:.55;
+    cursor:default;
+  }
+  .option-cta--soon:hover{ background:transparent; color:var(--red); }
 
-  @media (max-width:720px){
-    .faq{ padding:12vw 8vw 2vw; }
-    .faq-title{ white-space:normal; font-size:clamp(1.5rem,7.2vw,3.2rem); margin-bottom:2rem; }
-    .faq-item summary{ font-size:1rem; gap:1rem; }
-    .faq-answer{ padding-right:0; }
+  @media (max-width:900px){
+    .options{ grid-template-columns:1fr; gap:1.3rem; padding:12vw 8vw 0; }
+    .option{ padding:2rem 1.6rem 1.8rem; max-width:440px; width:100%; margin:0 auto; }
   }
 </style>
 </head>
@@ -373,6 +394,7 @@
         <img src="PaperHeartsClub-Icon.png" alt="Paper Hearts Club">
       </a>
       <div class="nav-right">
+        <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
         <a href="policies.html">Policies</a>
       </div>
@@ -402,6 +424,30 @@
     </div>
   </main>
 
+  <section class="options">
+    <div class="option">
+      <img class="option-star" src="star.png" alt="" aria-hidden="true">
+      <h2 class="option-title">Just One Letter</h2>
+      <p class="option-type">One-Time Purchase</p>
+      <p class="option-copy">Not ready to make it official? Order a single envelope and see what lands in your mailbox. No subscription, no renewal &mdash; just one good piece of mail.</p>
+      <span class="option-cta option-cta--soon">Coming Soon</span>
+    </div>
+    <div class="option">
+      <img class="option-star" src="star.png" alt="" aria-hidden="true">
+      <h2 class="option-title">Join the Club</h2>
+      <p class="option-type">Monthly Subscription</p>
+      <p class="option-copy">A new envelope every month for $9 &mdash; handwritten thoughts, paper goods, and little surprises. Cancel anytime, no hard feelings.</p>
+      <a class="option-cta" href="https://buy.stripe.com/28EeVdaS2foxdY8480ejK01" target="_blank" rel="noopener">Become a Member</a>
+    </div>
+    <div class="option">
+      <img class="option-star" src="star.png" alt="" aria-hidden="true">
+      <h2 class="option-title">Send Some Love</h2>
+      <p class="option-type">Send to a Friend</p>
+      <p class="option-copy">Happy mail makes a very cute surprise. Use their mailing address at checkout and we&rsquo;ll send it straight to their mailbox &mdash; no hints required.</p>
+      <span class="option-cta option-cta--soon">Coming Soon</span>
+    </div>
+  </section>
+
   <div class="feature-heading">
     <p class="script feature-script">The Art of Staying in Touch</p>
   </div>
@@ -414,75 +460,6 @@
       <p>Our Pegasus is a reminder that imagination and connection have always traveled farther than distance. Some of the people we love live around the corner, while others are hundreds of miles away, but a letter has a way of making that distance feel smaller.</p>
       <p>Every envelope carries more than paper. It carries the time someone set aside to think of another person, to share a story, celebrate a milestone, offer encouragement, or simply say, &ldquo;I was thinking about you.&rdquo; Those are the things that stay with us long after the envelope has been opened.</p>
       <p>I hope these letters encourage you to create more, write more, save more, and surround yourself with tangible reminders of the people and moments that matter most.</p>
-    </div>
-  </section>
-
-  <section class="faq">
-    <p class="eyebrow">Good Questions</p>
-    <h2 class="script faq-title">Before You Ask.</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>When will my first Paper Hearts envelope arrive?</summary>
-        <div class="faq-answer">
-          <p>Paper Hearts is mailed once a month. Orders placed by the 15th will receive that month’s envelope. If you join after the 15th, you’ll be added to the following month’s mailing.</p>
-          <p>Every envelope is packed, stamped, and sent the old-fashioned way — so give your happy mail a little time to find you.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>Is there tracking?</summary>
-        <div class="faq-answer">
-          <p>Nope! Paper Hearts travels by good old-fashioned snail mail, which means there’s no tracking number to obsessively refresh. Consider the mystery part of the fun. Keep an eye on your mailbox — something good is coming.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>What if my envelope doesn’t arrive?</summary>
-        <div class="faq-answer">
-          <p>Snail mail occasionally takes the scenic route. If it’s been a few weeks and your Paper Hearts envelope still hasn’t found its way to you, reach out and we’ll figure it out together.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I cancel my subscription?</summary>
-        <div class="faq-answer">
-          <p>Of course. Paper Hearts is meant to be something you look forward to, never something you feel stuck with. You can cancel anytime before your next billing date to avoid being charged for the following month.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I send Paper Hearts as a gift?</summary>
-        <div class="faq-answer">
-          <p>Please do! Paper Hearts makes a very cute little surprise for a friend, sister, mom, long-distance bestie, or anyone whose mailbox could use a little more love. Just use their mailing address when ordering.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>What comes inside each envelope?</summary>
-        <div class="faq-answer">
-          <p>That’s part of the surprise. ♡ Every month is built around a new theme and filled with a thoughtful mix of paper goods, little keepsakes, things to read, things to do, and things you might want to pin to your fridge forever.</p>
-          <p>No two months are exactly alike — and we like it that way.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>Do I know the theme before it arrives?</summary>
-        <div class="faq-answer">
-          <p>You might get a few hints, but we try not to give everything away. Half the magic of Paper Hearts is opening your mailbox without knowing exactly what’s waiting inside.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>How much is Paper Hearts?</summary>
-        <div class="faq-answer">
-          <p>Paper Hearts is $9/month, including a brand-new envelope of happy mail each month. No long-term commitment. Cancel whenever you need to.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>Where does Paper Hearts ship?</summary>
-        <div class="faq-answer">
-          <p>For now, Paper Hearts is making its way through mailboxes across the United States. We hope to send our little envelopes farther someday.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary>Is everything really made by you?</summary>
-        <div class="faq-answer">
-          <p>Yes! Paper Hearts is dreamed up, designed, written, assembled, and packed with lots of love each month. It’s intentionally small-batch, a little imperfect, and very human... Exactly how snail mail should be.</p>
-        </div>
-      </details>
     </div>
   </section>
 
