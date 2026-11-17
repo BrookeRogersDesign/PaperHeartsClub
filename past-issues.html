@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Issues — Paper Hearts Club</title>
+<meta name="description" content="Every Paper Hearts Club envelope so far, month by month.">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperhearts.club/past-issues.html">
+<meta property="og:title" content="Past Issues — Paper Hearts Club">
+<meta property="og:description" content="Every Paper Hearts Club envelope so far, month by month.">
+<meta property="og:image" content="https://paperhearts.club/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://use.typekit.net/ljp7fbz.css">
+<style>
+  :root{
+    --cream:#FBF6E4;
+    --brown:#381412;
+    --red:#D44942;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    background:var(--cream);
+    color:var(--brown);
+    font-family:"proxima-nova",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .hero{
+    min-height:100vh;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    padding:2.4vw 3vw 2.6vw;
+  }
+
+  /* ---- NAV ---- */
+  .nav{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:start;
+    gap:1rem;
+  }
+  .nav-left{display:flex;gap:2.6vw;}
+  .nav-right{justify-self:end;display:flex;gap:2.6vw;}
+  .nav a{
+    color:var(--red);
+    text-decoration:none;
+    font-weight:700;
+    font-size:clamp(.72rem,1.05vw,1.05rem);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    transition:opacity .2s ease;
+  }
+  .nav a:hover{opacity:.6;}
+  .brand-mark{justify-self:center;}
+  .brand-mark img{
+    height:clamp(58px,7vw,104px);
+    width:auto;
+    display:block;
+  }
+
+  /* ---- WORDMARK ---- */
+  .hero-center{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:clamp(2.4rem,5.5vh,4.5rem);
+    padding:2vh 0;
+  }
+  .cta{
+    color:var(--red);
+    text-decoration:none;
+    font-weight:700;
+    font-size:clamp(.72rem,1.05vw,1.05rem);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    transition:opacity .2s ease;
+  }
+  .cta:hover{ opacity:.6; }
+  .wordmark{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+  }
+  .wordmark picture{
+    width:min(86%,1400px);
+    display:block;
+  }
+  .wordmark img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  /* ---- ICON ROW ---- */
+  .icons{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:1rem;
+    padding:0 2vw .5vh;
+  }
+  .icons img{
+    height:clamp(34px,4vw,58px);
+    width:auto;
+    display:block;
+  }
+
+  @media (max-width:720px){
+    .hero{padding:5vw 5vw 6vw;}
+    .nav{grid-template-columns:1fr auto 1fr;column-gap:.5rem;}
+    .nav a{font-size:.55rem;letter-spacing:.04em;}
+    .nav-left{gap:3.5vw;}
+    .nav-right{gap:3.5vw;}
+    .nav-left,.nav-right{min-width:0;flex-wrap:wrap;row-gap:.7rem;}
+    .nav-right{justify-content:flex-end;}
+    .icons{flex-wrap:wrap;justify-content:center;gap:6vw 8vw;padding-top:2vh;}
+    .icons svg{width:34px;}
+  }
+
+  /* ===== COMING SOON SECTIONS ===== */
+  .script{ font-family:"pd-americano", cursive; color:var(--red); font-weight:400; }
+
+  .feature-heading{
+    max-width:1560px;
+    margin:0 auto;
+    padding:5vw 5vw 0;
+    text-align:center;
+  }
+  .feature{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:"img body";
+    column-gap:5vw;
+    align-items:center;
+    max-width:1560px;
+    margin:0 auto;
+    padding:5.5vw 5vw 4vw;
+  }
+  .feature-img{
+    grid-area:img;
+    align-self:center;
+    justify-self:center;
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    height:auto;
+    display:block;
+  }
+  .feature-script{
+    font-family:"pd-americano-short","pd-americano",cursive;
+    font-size:clamp(1.3rem,4.8vw,5.5rem); /* one line across; scales, capped */
+    line-height:1.1;
+    white-space:nowrap;
+    margin:0;
+  }
+  .feature-body{ grid-area:body; }
+  .feature-letter-title{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--brown);
+    margin-bottom:1.1rem;
+  }
+  .feature-body p{
+    font-size:1rem;
+    line-height:1.65;
+    color:var(--brown);
+    margin-bottom:1.05rem;
+  }
+  .feature-body p:last-child{ margin-bottom:0; }
+
+  .signup{
+    position:relative;
+    text-align:center;
+    padding:3vw 3vw 6vw;
+  }
+  .signup .eyebrow,
+  .signup .signup-title,
+  .signup .signup-copy,
+  .signup .subscribe{ position:relative; z-index:1; }
+  .star{
+    position:absolute;
+    z-index:0;
+    width:clamp(46px,5vw,92px);
+    height:auto;
+    pointer-events:none;
+    user-select:none;
+  }
+  .star-tr{ top:.5rem; right:16%; transform:rotate(8deg); }
+  .star-bl{ top:8.5rem; left:13%; transform:rotate(-7deg); }
+  .eyebrow{
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.82rem;
+    color:var(--brown);
+    margin-bottom:1.6rem;
+  }
+  .signup-title{
+    font-family:"pd-americano-short","pd-americano",cursive;
+    font-size:clamp(1rem,4.2vw,5rem); /* scaled down from 5.21vw/6.25rem */
+    line-height:1.1;
+    white-space:nowrap;
+    margin:.2rem auto 1.6rem;
+  }
+  .signup-copy{
+    font-size:.95rem;
+    line-height:1.65;
+    color:var(--brown);
+    max-width:440px;
+    margin:0 auto 2.2rem;
+  }
+  .subscribe{
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+    border:1.5px solid var(--red);
+    border-radius:999px;
+    padding:.3rem .3rem .3rem 1.5rem;
+    max-width:430px;
+    margin:0 auto;
+  }
+  .subscribe input{
+    flex:1;
+    min-width:0;
+    border:none;
+    background:transparent;
+    color:var(--red);
+    font-family:inherit;
+    font-size:.9rem;
+    outline:none;
+  }
+  .subscribe input::placeholder{ color:var(--red); opacity:.5; }
+  .subscribe button{
+    flex:none;
+    border:none;
+    background:var(--red);
+    color:var(--cream);
+    font-family:inherit;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    padding:.8rem 1.6rem;
+    border-radius:999px;
+    cursor:pointer;
+    transition:opacity .2s ease;
+  }
+  .subscribe button:hover{ opacity:.85; }
+
+  .site-footer{
+    text-align:center;
+    padding:5vw 6vw;
+  }
+  .site-footer img{
+    width:min(230px,42%);
+    height:auto;
+    display:inline-block;
+  }
+
+  @media (max-width:720px){
+    .feature-heading{ padding:12vw 8vw 0; }
+    .feature{
+      grid-template-columns:1fr;
+      grid-template-areas:"img" "body";
+      row-gap:1.8rem;
+      padding:6vw 8vw 8vw;
+    }
+    .feature-img{ align-self:auto; max-width:440px; margin:0 auto; }
+    .feature-script{ white-space:normal; font-size:clamp(2rem,9vw,3.2rem); }
+    .signup{ padding:6vw 6vw 12vw; }
+    .star{ width:44px; }
+    .star-tr{ top:0; right:5%; }
+    .star-bl{ top:auto; bottom:1.5rem; left:4%; }
+    .subscribe button{ padding:.75rem 1.1rem; }
+  }
+
+  /* ===== PAST ISSUES PAGE ===== */
+  .site-nav{ max-width:1920px; margin:0 auto; padding:2.4vw 3vw; }
+  @media (max-width:720px){ .site-nav{ padding:5vw 5vw; } }
+  .past{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:clamp(1.5rem,5.9vw,7.125rem);
+    row-gap:clamp(3rem,6.7vw,8rem);
+    max-width:1398px;
+    margin:0 auto;
+    padding:clamp(2rem,8.3vw,10rem) 5vw clamp(3rem,6vw,7rem);
+  }
+  .issue{ margin:0; text-align:center; }
+  .issue-card{
+    aspect-ratio:642/817;
+    max-width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:4px solid var(--red);
+    border-radius:clamp(28px,2.7vw,51.5px);
+    box-shadow:0 4px 60px rgba(142,131,113,.15);
+    overflow:hidden;
+  }
+  .issue-card img{ height:auto; display:block; }
+  .issue-label{
+    margin-top:clamp(1.2rem,3.1vw,3.7rem);
+    color:var(--red);
+    font-weight:700;
+    font-size:clamp(.95rem,1.3vw,1.55rem);
+    text-transform:uppercase;
+  }
+  @media (max-width:720px){
+    .past{ grid-template-columns:1fr; max-width:480px; padding:9vw 8vw 4vw; row-gap:3rem; }
+    .issue-card{ border-width:3px; }
+  }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="https://buy.stripe.com/28EeVdaS2foxdY8480ejK01" target="_blank" rel="noopener">Snail Mail</a>
+        <a href="about.html">About Us</a>
+        <a href="past-issues.html">Past Issues</a>
+      </div>
+      <a class="brand-mark" href="index.html" aria-label="Paper Hearts Club home">
+        <img src="PaperHeartsClub-Icon.png" alt="Paper Hearts Club">
+      </a>
+      <div class="nav-right">
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="policies.html">Policies</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="past" aria-label="Past issues">
+    <figure class="issue">
+      <div class="issue-card"><img src="PastIssue-2026-11.png" alt="What came in the November 2026 envelope" width="500" height="707" style="width:77.5%" loading="lazy"></div>
+      <figcaption class="issue-label">November 2026</figcaption>
+    </figure>
+    <figure class="issue">
+      <div class="issue-card"><img src="PastIssue-2026-10.png" alt="What came in the October 2026 envelope" width="542" height="760" style="width:84%" loading="lazy"></div>
+      <figcaption class="issue-label">October 2026</figcaption>
+    </figure>
+    <figure class="issue">
+      <div class="issue-card"><img src="PastIssue-2026-09.jpg" alt="What came in the September 2026 envelope" width="1204" height="1059" style="width:94%" loading="lazy"></div>
+      <figcaption class="issue-label">September 2026</figcaption>
+    </figure>
+    <figure class="issue">
+      <div class="issue-card"><img src="PastIssue-2026-08.jpg" alt="What came in the August 2026 envelope" width="1246" height="1004" style="width:97%" loading="lazy"></div>
+      <figcaption class="issue-label">August 2026</figcaption>
+    </figure>
+  </main>
+
+  <section class="signup">
+    <img class="star star-tr" src="star.png" alt="" aria-hidden="true">
+    <img class="star star-bl" src="star.png" alt="" aria-hidden="true">
+    <h2 class="script signup-title">Letters Worth Waiting For</h2>
+    <p class="signup-copy">A modern mail club built around thoughtful correspondence, meaningful keepsakes, and friendships that deserve more than a text message. Join the mailing list for little peeks at upcoming themes and first dibs on the next mailer.</p>
+    <form class="subscribe" action="https://formspree.io/f/xpqvwjwp" method="POST">
+      <input type="email" name="email" placeholder="youremail123@gmail.com" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <img src="Footer-Logo.png" alt="Paper Hearts Club">
+  </footer>
+</body>
+</html>
